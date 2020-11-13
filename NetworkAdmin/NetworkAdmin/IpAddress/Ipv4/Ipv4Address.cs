@@ -7,11 +7,11 @@ namespace NetworkAdmin.IpAddress.Ipv4
 {
     public class Ipv4Address: IPAddress
     {
-        private static readonly Ipv4AddressUtils Utils = new Ipv4AddressUtils();
-        public ushort FirstOctet => Utils.GetDecimalFromBinary(Binary.Take(8).ToArray());
-        public ushort SecondOctet => Utils.GetDecimalFromBinary(Binary.Skip(8).Take(8).ToArray());
-        public ushort ThirdOctet => Utils.GetDecimalFromBinary(Binary.Skip(16).Take(8).ToArray());
-        public ushort FourthOctet => Utils.GetDecimalFromBinary(Binary.Skip(24).Take(8).ToArray());
+        private static readonly IPAddressUtils<Ipv4Address> Utils = new Ipv4AddressUtils();
+        public ushort FirstOctet => Utils.GetSingleOctetDecimalFromBinary(Binary.Take(8).ToArray());
+        public ushort SecondOctet => Utils.GetSingleOctetDecimalFromBinary(Binary.Skip(8).Take(8).ToArray());
+        public ushort ThirdOctet => Utils.GetSingleOctetDecimalFromBinary(Binary.Skip(16).Take(8).ToArray());
+        public ushort FourthOctet => Utils.GetSingleOctetDecimalFromBinary(Binary.Skip(24).Take(8).ToArray());
 
         private bool[] Binary;
 
@@ -32,19 +32,19 @@ namespace NetworkAdmin.IpAddress.Ipv4
         public Ipv4Address(ushort firstOctet, ushort secondOctet, ushort thirdOctet, ushort fourthOctet)
         {
             var accum = new List<bool>(32);
-            accum.AddRange(Utils.GetBinaryRepresentation(firstOctet));
-            accum.AddRange(Utils.GetBinaryRepresentation(secondOctet));
-            accum.AddRange(Utils.GetBinaryRepresentation(thirdOctet));
-            accum.AddRange(Utils.GetBinaryRepresentation(fourthOctet));
+            accum.AddRange(Utils.GetSingleOctetBinaryFromDecimal(firstOctet));
+            accum.AddRange(Utils.GetSingleOctetBinaryFromDecimal(secondOctet));
+            accum.AddRange(Utils.GetSingleOctetBinaryFromDecimal(thirdOctet));
+            accum.AddRange(Utils.GetSingleOctetBinaryFromDecimal(fourthOctet));
             Binary = accum.ToArray();
         }
 
         public bool[] ToBinary()
         {
-            bool[] firstOctetBin = Utils.GetBinaryRepresentation(FirstOctet);
-            bool[] secondOctetBin = Utils.GetBinaryRepresentation(SecondOctet);
-            bool[] thirdOctetBin = Utils.GetBinaryRepresentation(ThirdOctet);
-            bool[] fourthOctetBin = Utils.GetBinaryRepresentation(FourthOctet);
+            bool[] firstOctetBin = Utils.GetSingleOctetBinaryFromDecimal(FirstOctet);
+            bool[] secondOctetBin = Utils.GetSingleOctetBinaryFromDecimal(SecondOctet);
+            bool[] thirdOctetBin = Utils.GetSingleOctetBinaryFromDecimal(ThirdOctet);
+            bool[] fourthOctetBin = Utils.GetSingleOctetBinaryFromDecimal(FourthOctet);
             
             var output = new List<bool>(32);
             output.AddRange(firstOctetBin);

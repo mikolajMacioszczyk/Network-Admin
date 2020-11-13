@@ -464,5 +464,107 @@ namespace NetworkAdmin.Tests.ConsoleAppTests.Actions
             Assert.NotNull(result);
             Assert.AreEqual(expected, result);
         }
+        
+        [Test]
+        public void GetPossibleSubnetsCount_0()
+        {
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("10.10.10.10").Returns("8");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Possible subnets = 1";
+            
+            // act
+            var result = actions.GetPossibleSubnetsCount();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetPossibleSubnetsCount_16()
+        {
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("10.10.10.10").Returns("12");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Possible subnets = 16";
+            
+            // act
+            var result = actions.GetPossibleSubnetsCount();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetPossibleHostCount_Max()
+        {
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("199.10.10.10").Returns("24");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Possible hosts = 254";
+            
+            // act
+            var result = actions.GetPossibleHostCount();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetPossibleHostCount_Middle()
+        {
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("199.10.10.10").Returns("28");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Possible hosts = 14";
+            
+            // act
+            var result = actions.GetPossibleHostCount();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetPossibleHostCount_0()
+        {
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("199.10.10.10").Returns("31");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Possible hosts = 0";
+            
+            // act
+            var result = actions.GetPossibleHostCount();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void DecimalFromBinary()
+        {   
+            // arrange
+            var mockKeyboardInteraction = new Mock<MockKeyboardInteraction>();
+            mockKeyboardInteraction.SetupSequence(m => m.ReadString()).Returns("1010101010.1010101010.1010101010.1010101010");
+            var actions = new CheckIpv4AddressActions(mockKeyboardInteraction.Object);
+            var expected = "Decimal Representation: 170.170.170.170";
+            
+            // act
+            var result = actions.DecimalFromBinary();
+
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected, result);
+        }
     }
 }

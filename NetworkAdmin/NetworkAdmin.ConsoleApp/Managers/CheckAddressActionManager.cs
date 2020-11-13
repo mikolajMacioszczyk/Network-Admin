@@ -28,11 +28,13 @@ namespace NetworkAdmin.ConsoleApp.Managers
             Console.WriteLine("8. Get Class of Address");
             Console.WriteLine("9. Get Subnet Network Bit Count");
             Console.WriteLine("10. Get Host Bit Count");
-            Console.WriteLine("11. Get Posible Subnets Count");
+            Console.WriteLine("11. Get Possible Subnets Count");
             Console.WriteLine("12. Get Possible Host Count");
+            Console.WriteLine("==========================");
             Console.WriteLine("13. Get Full Network Data");
             Console.WriteLine("14. Binary Address From Decimal Address");
             Console.WriteLine("15. Decimal Address From Binary Address");
+            Console.WriteLine("==========================");
             Console.WriteLine("-1. Powrót");
             Console.WriteLine("0. Zakończ");
         }
@@ -74,6 +76,21 @@ namespace NetworkAdmin.ConsoleApp.Managers
                         break;
                     case 10:
                         Console.WriteLine(_actions.GetHostBitCount());
+                        break;
+                    case 11:
+                        Console.WriteLine(_actions.GetPossibleSubnetsCount());
+                        break;
+                    case 12:
+                        Console.WriteLine(_actions.GetPossibleHostCount());
+                        break;
+                    case 13:
+                        Console.WriteLine(_actions.GetFullNetworkData());
+                        break;
+                    case 14:
+                        Console.WriteLine(_actions.BinaryFromDecimal());
+                        break;
+                    case 15:
+                        Console.WriteLine(_actions.DecimalFromBinary());
                         break;
                     case -1:
                     case 0: 

@@ -18,10 +18,10 @@ namespace NetworkAdmin.Tests.DLLUnitTests.IpAddressTests
             ushort secondOctet = 0;
             ushort thirdOctet = 255;
             ushort fourthOctet = 127;
-            var input = new List<bool>(utils.GetBinaryRepresentation(firstOctet));
-            input.AddRange(utils.GetBinaryRepresentation(secondOctet));
-            input.AddRange(utils.GetBinaryRepresentation(thirdOctet));
-            input.AddRange(utils.GetBinaryRepresentation(fourthOctet));
+            var input = new List<bool>(utils.GetSingleOctetBinaryFromDecimal(firstOctet));
+            input.AddRange(utils.GetSingleOctetBinaryFromDecimal(secondOctet));
+            input.AddRange(utils.GetSingleOctetBinaryFromDecimal(thirdOctet));
+            input.AddRange(utils.GetSingleOctetBinaryFromDecimal(fourthOctet));
             
             // act
             Ipv4Address address = new Ipv4Address(input.ToArray());
@@ -84,10 +84,10 @@ namespace NetworkAdmin.Tests.DLLUnitTests.IpAddressTests
             ushort secondOctet = 0;
             ushort thirdOctet = 255;
             ushort fourthOctet = 127;
-            var expected = new List<bool>(utils.GetBinaryRepresentation(firstOctet));
-            expected.AddRange(utils.GetBinaryRepresentation(secondOctet));
-            expected.AddRange(utils.GetBinaryRepresentation(thirdOctet));
-            expected.AddRange(utils.GetBinaryRepresentation(fourthOctet));
+            var expected = new List<bool>(utils.GetSingleOctetBinaryFromDecimal(firstOctet));
+            expected.AddRange(utils.GetSingleOctetBinaryFromDecimal(secondOctet));
+            expected.AddRange(utils.GetSingleOctetBinaryFromDecimal(thirdOctet));
+            expected.AddRange(utils.GetSingleOctetBinaryFromDecimal(fourthOctet));
             var address = new Ipv4Address(192,0,255,127);
             
             // act

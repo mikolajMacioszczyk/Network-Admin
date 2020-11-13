@@ -9,5 +9,9 @@ namespace NetworkAdmin.IpAddress.Utils
         bool IsValidNetworkPortion(T address, int networkPortion);
 
         IPRange<T> GetAddressRange(T address);
+
+        ushort GetSingleOctetDecimalFromBinary(bool[] bits);
+        bool[] GetSingleOctetBinaryFromDecimal(ushort number);
+        string BinaryIpToString(bool[] bits);
     }
 }

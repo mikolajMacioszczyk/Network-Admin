@@ -45,7 +45,7 @@ namespace NetworkAdmin.IpAddress.Utils
             }
         }
         
-        public ushort GetDecimalFromBinary(bool[] bits)
+        public ushort GetSingleOctetDecimalFromBinary(bool[] bits)
         {
             ushort sum = 0;
             ushort power = 1;
@@ -60,7 +60,7 @@ namespace NetworkAdmin.IpAddress.Utils
             return sum;
         }    
         
-        public bool[] GetBinaryRepresentation(ushort number)
+        public bool[] GetSingleOctetBinaryFromDecimal(ushort number)
         {
             bool[] output = new bool[8];
             ushort divider = 128;

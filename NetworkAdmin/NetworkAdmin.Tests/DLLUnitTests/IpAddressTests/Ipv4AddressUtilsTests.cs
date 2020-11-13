@@ -1,4 +1,5 @@
-﻿using NetworkAdmin.IpAddress.Ipv4;
+﻿using System.Linq;
+using NetworkAdmin.IpAddress.Ipv4;
 using NetworkAdmin.IpAddress.Range.IPv4;
 using NetworkAdmin.IpAddress.Utils;
 using NUnit.Framework;
@@ -13,7 +14,7 @@ namespace NetworkAdmin.Tests.DLLUnitTests.IpAddressTests
         [SetUp]
         public void SetUp()
         {
-            _utils = new IpAddress.Utils.Ipv4AddressUtils();
+            _utils = new Ipv4AddressUtils();
         }
         
         [Test]
@@ -1117,6 +1118,138 @@ namespace NetworkAdmin.Tests.DLLUnitTests.IpAddressTests
             // assert
             Assert.NotNull(result);
             Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetSingleOctetDecimalFromBinary_all0()
+        {        
+            // arrange
+            var input = new bool[8]{false,false,false,false,false,false,false,false};
+            var expected = 0;
+            
+            // act
+            var result = _utils.GetSingleOctetDecimalFromBinary(input);
+            
+            // assert
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetSingleOctetDecimalFromBinary_all1()
+        {        
+            // arrange
+            var input = new bool[8]{true,true,true,true,true,true,true,true};
+            var expected = 255;
+            
+            // act
+            var result = _utils.GetSingleOctetDecimalFromBinary(input);
+            
+            // assert
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetSingleOctetDecimalFromBinary_69()
+        {        
+            // arrange
+            var input = new bool[8]{false,true,false,false,false,true,false,true};
+            var expected = 69;
+            
+            // act
+            var result = _utils.GetSingleOctetDecimalFromBinary(input);
+            
+            // assert
+            Assert.AreEqual(expected, result);
+        }
+        
+        [Test]
+        public void GetSingleOctetBinaryFromDecimal_all0()
+        {        
+            // arrange
+            var expected = new bool[8]{false,false,false,false,false,false,false,false};
+            ushort input = 0;
+            
+            // act
+            var result = _utils.GetSingleOctetBinaryFromDecimal(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.True(expected.SequenceEqual(result));
+        }
+        
+        [Test]
+        public void GetSingleOctetBinaryFromDecimal_all1()
+        {        
+            // arrange
+            var expected = new bool[8]{true,true,true,true,true,true,true,true};
+            ushort input = 255;
+            
+            // act
+            var result = _utils.GetSingleOctetBinaryFromDecimal(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.True(expected.SequenceEqual(result));
+        }
+        
+        [Test]
+        public void GetSingleOctetBinaryFromDecimal_69()
+        {
+            // arrange
+            var expected = new bool[8]{false,true,false,false,false,true,false,true};
+            ushort input = 69;
+            
+            // act
+            var result = _utils.GetSingleOctetBinaryFromDecimal(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.True(expected.SequenceEqual(result));
+        }
+        
+        [Test]
+        public void BinaryIpToString_all0()
+        {        
+            // arrange
+            var input = new bool[32]{false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+            string expected = "00000000.00000000.00000000.000000000";
+            
+            // act
+            var result = _utils.BinaryIpToString(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected,result);
+        }
+        
+        [Test]
+        public void BinaryIpToString_all1()
+        {        
+            // arrange
+            var input = new bool[32]{true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
+            string expected = "11111111.11111111.11111111.11111111";
+            
+            // act
+            var result = _utils.BinaryIpToString(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected,result);
+        }
+        
+        [Test]
+        public void BinaryIpToString_69()
+        {
+            // arrange
+            var input = new bool[32]{false,true,false,false,false,true,false,true,false,true,false,false,false,true,false,true,false,true,false,false,false,true,false,true,false,true,false,false,false,true,false,true};
+            string expected = "01000101.01000101.01000101.01000101";
+            
+            // act
+            var result = _utils.BinaryIpToString(input);
+            
+            // assert
+            Assert.NotNull(result);
+            Assert.AreEqual(expected,result);
         }
     }
 }
