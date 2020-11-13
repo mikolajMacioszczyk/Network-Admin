@@ -1,0 +1,16 @@
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.exe
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.deps.json
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.runtimeconfig.json
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.runtimeconfig.dev.json
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.dll
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.pdb
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.csprojAssemblyReference.cache
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.AssemblyInfoInputs.cache
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.AssemblyInfo.cs
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.csproj.CoreCompileInputs.cache
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.dll
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.pdb
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.genruntimeconfig.cache
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.dll
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\bin\Debug\netcoreapp3.1\NetworkAdmin.pdb
+D:\C#\NetworkAdmin\NetworkAdmin.ConsoleApp\obj\Debug\netcoreapp3.1\NetworkAdmin.ConsoleApp.csproj.CopyComplete

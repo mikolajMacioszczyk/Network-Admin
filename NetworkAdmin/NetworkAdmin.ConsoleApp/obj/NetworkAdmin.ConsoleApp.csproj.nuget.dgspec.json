@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\C#\\NetworkAdmin\\NetworkAdmin.ConsoleApp\\NetworkAdmin.ConsoleApp.csproj": {}
+  },
+  "projects": {
+    "D:\\C#\\NetworkAdmin\\NetworkAdmin.ConsoleApp\\NetworkAdmin.ConsoleApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\C#\\NetworkAdmin\\NetworkAdmin.ConsoleApp\\NetworkAdmin.ConsoleApp.csproj",
+        "projectName": "NetworkAdmin.ConsoleApp",
+        "projectPath": "D:\\C#\\NetworkAdmin\\NetworkAdmin.ConsoleApp\\NetworkAdmin.ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\macio\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\NetworkAdmin\\NetworkAdmin.ConsoleApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\macio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\C#\\NetworkAdmin\\NetworkAdmin\\NetworkAdmin.csproj": {
+                "projectPath": "D:\\C#\\NetworkAdmin\\NetworkAdmin\\NetworkAdmin.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\C#\\NetworkAdmin\\NetworkAdmin\\NetworkAdmin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\C#\\NetworkAdmin\\NetworkAdmin\\NetworkAdmin.csproj",
+        "projectName": "NetworkAdmin",
+        "projectPath": "D:\\C#\\NetworkAdmin\\NetworkAdmin\\NetworkAdmin.csproj",
+        "packagesPath": "C:\\Users\\macio\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\NetworkAdmin\\NetworkAdmin\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\macio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
