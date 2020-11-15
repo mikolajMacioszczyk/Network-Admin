@@ -1212,7 +1212,7 @@ namespace NetworkAdmin.Tests.DLLUnitTests.IpAddressTests
         {        
             // arrange
             var input = new bool[32]{false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
-            string expected = "00000000.00000000.00000000.000000000";
+            string expected = "00000000.00000000.00000000.00000000";
             
             // act
             var result = _utils.BinaryIpToString(input);

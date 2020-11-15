@@ -35,7 +35,8 @@ namespace NetworkAdmin.Ipv4Class
                 case "A":
                 case "B":
                 case "C":
-                    return networkPortion >= networkClass.GetNetworkPortion() && networkPortion < 32 ? (ushort)(networkPortion - networkClass.GetNetworkPortion()) : (ushort)0;
+                    return networkPortion >= networkClass.GetNetworkPortion() && networkPortion < 32 ? 
+                        (ushort)(networkPortion - networkClass.GetNetworkPortion()) : (ushort)0;
                 default:
                     return 0;
             }
@@ -68,14 +69,15 @@ namespace NetworkAdmin.Ipv4Class
             }
         }
         
-        public object PossibleHostsCount(IClassNetwork<Ipv4Address> networkClass, in ushort networkPortion)
+        public int PossibleHostsCount(IClassNetwork<Ipv4Address> networkClass, in ushort networkPortion)
         {
             switch (networkClass.GetName())
             {
                 case "A":
                 case "B":
                 case "C":
-                    return networkPortion >= networkClass.GetNetworkPortion() && networkPortion < 32 ? MathHelper.Pow(2,32 - networkPortion)-2 : (ushort)0;
+                    return networkPortion >= networkClass.GetNetworkPortion() && networkPortion < 32 ? 
+                        MathHelper.Pow(2,32 - networkPortion)-2 : 0;
                 default:
                     return 0;
             }

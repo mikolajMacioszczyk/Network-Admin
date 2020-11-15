@@ -73,19 +73,18 @@ namespace NetworkAdmin.IpAddress.Ipv4
 
         public static bool operator<(Ipv4Address first, Ipv4Address second)
         {
-            if (first.FirstOctet < second.FirstOctet)
-                return true; 
-            if (first.FirstOctet > second.FirstOctet)
-                return false;
-            if (first.SecondOctet < second.SecondOctet)
-                return true; 
-            if (first.SecondOctet > second.SecondOctet)
-                return false;
-            if (first.ThirdOctet < second.ThirdOctet)
-                return true; 
-            if (first.ThirdOctet > second.ThirdOctet)
-                return false;
-            return first.FourthOctet < second.FourthOctet;
+            for (int i = 0; i < 32; i++)
+            {
+                if (!first.Binary[i] && second.Binary[i])
+                {
+                    return true;
+                }
+                if (first.Binary[i] && !second.Binary[i])
+                {
+                    return false;
+                }
+            }
+            return false;
         } 
         public static bool operator>(Ipv4Address first, Ipv4Address second)
         {
@@ -94,19 +93,18 @@ namespace NetworkAdmin.IpAddress.Ipv4
         
         public static bool operator<=(Ipv4Address first, Ipv4Address second)
         {
-            if (first.FirstOctet > second.FirstOctet)
-                return false;
-            if (first.FirstOctet < second.FirstOctet)
-                return true;
-            if (first.SecondOctet < second.SecondOctet)
-                return true; 
-            if (first.SecondOctet > second.SecondOctet)
-                return false;
-            if (first.ThirdOctet < second.ThirdOctet)
-                return true; 
-            if (first.ThirdOctet > second.ThirdOctet)
-                return false;
-            return first.FourthOctet <= second.FourthOctet;
+            for (int i = 0; i < 32; i++)
+            {
+                if (!first.Binary[i] && second.Binary[i])
+                {
+                    return true;
+                }
+                if (first.Binary[i] && !second.Binary[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         
         public static bool operator>=(Ipv4Address first, Ipv4Address second)
